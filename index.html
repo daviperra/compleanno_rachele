@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Accesso Protetto</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container" id="login">
+    <h2 id="">Inserisci la password per accedere:</h2>
+    <input type="password" id="pwd" placeholder="Password">
+    <button onclick="checkPassword()">Entra</button>
+    <p id="error" class="error"></p>
+  </div>
+
+  <div class="container" id="content" style="display: none;">
+    <h1>Clicca per addebitare 499€ al tuo conto Hype</h1>
+    <a href="voucher.pdf" download class="download-btn">Evvivaaaa</a>
+  </div>
+
+  <script>
+    const PASSWORD = "demo123"; // Cambia questa
+
+    function checkPassword() {
+      const input = document.getElementById("pwd").value;
+      if (input === PASSWORD) {
+        document.getElementById("login").style.display = "none";
+        document.getElementById("content").style.display = "block";
+      } else {
+        document.getElementById("error").textContent = "Password errata.";
+      }
+    }
+  </script>
+</body>
+</html>
